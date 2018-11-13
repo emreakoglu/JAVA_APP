@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+
+	<h:form prependId="false" id="requestInputForm">
+		<h:panelGrid columns="2">
+
+			<h:outputLabel value="Nereden " />
+			<p:inputText value="#{beanRequestController.beanRequest.nereden}" />
+
+			<h:outputLabel value="Nereye " />
+			<p:inputText value="#{beanRequestController.beanRequest.nereye}" />
+
+			<h:outputLabel value="Tarih " />
+			<p:inputText value="#{beanRequestController.beanRequest.tarih}" />
+
+			<h:outputLabel value="Distance " />
+			<p:inputText value="#{beanRequestController.beanRequest.distance}" />
+
+			<p:commandButton value="Save" action="#{beanRequestController.save}"
+				partialSubmit="true" process="requestInputForm"
+				update="requestInputForm,beanRequestList" />
+		</h:panelGrid>
+
+
+		<p:dataTable id="beanRequestList" var="beanRequest" value="#{beanRequestController.requests}">
+			<p:column headerText="Id">
+				<h:outputText value="#{beanRequest.id}" />
+			</p:column>
+
+			<p:column headerText="Nereden">
+				<h:outputText value="#{beanRequest.nereden}" />
+			</p:column>
+
+			<p:column headerText="Nereye">
+				<h:outputText value="#{beanRequest.nereye}" />
+			</p:column>
+
+			<p:column headerText="Tarih">
+				<h:outputText value="#{beanRequest.tarih}" />
+			</p:column>
+
+			<p:column headerText="Distance">
+				<h:outputText value="#{beanRequest.distance}" />
+			</p:column>
+		</p:dataTable>
+		
+		Language :
+		<h:selectOneMenu value="#{language.localeCode}" onchange="submit()"
+			valueChangeListener="#{language.countryLocaleCodeChanged}">
+   			<f:selectItems value="#{language.countriesInMap}" />
+   		</h:selectOneMenu>
+
+	</h:form>
+</h:body>
+</html>
