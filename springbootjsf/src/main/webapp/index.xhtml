@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+	<title>Hello World - Login</title>
+
+</h:head>
+
+
+<h:body>
+	<h:form id="form1">
+		<p:growl id="messages" autoUpdate="true" sticky="false" life="200000"
+			escape="false" showDetail="true" showSummary="true" />
+
+
+		<p:dialog width="500" position="center center" modal="true" header="Login Ekranı"
+			height="200" id="pnlGiris" visible="true" closable="false"
+			resizable="false">
+
+			<h:outputLabel value="#{pc_Login.message}" />
+			<h:commandButton value="Hello World!"
+				actionListener="#{pc_Login.clickHelloWorldButton}" />
+
+			<f:facet name="footer">
+				<center>
+					<p:commandButton value="Giriş" action="#{pc_Login.doLogin}"></p:commandButton>
+				</center>
+			</f:facet>
+			<center>
+				<p:spacer height="50"></p:spacer>
+				<h:panelGrid columns="2">
+
+					<h:outputText value="Kullanıcı Adı:"></h:outputText>
+					<p:inputText value="#{pc_Login.kullaniciId}" size="15"
+						maxlength="13"></p:inputText>
+					<h:outputText value="Şifre:"></h:outputText>
+					<p:password value="#{pc_Login.kullaniciSifre}" size="15"
+						maxlength="14"></p:password>
+				</h:panelGrid>
+			</center>
+		</p:dialog>
+
+	</h:form>
+</h:body>
+</html>
