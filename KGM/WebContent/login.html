@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Kullanici Login</title>
+<link href="bicim.css" type="text/css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="img/favicon.ico">
+<script type="text/javascript">
+	function kontrol() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		if (username ==null && password == null) {
+			alert("Lutfen Tekrar giriniz!!");
+			
+			window.location.reload();
+		}
+		else if(password.length > 8 ){
+			alert ("Sifre en cok 8 basamakli olmali");
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="ortala">
+	<div class="banner"></div>
+</div>
+		
+        	<div id="ortala" >
+					<div style=" width:300px; margin:auto;">
+                    <form action="kontrol" method="post">
+					  <table width="100%" border="0" cellspacing="1" cellpadding="0">
+					    <tr>
+					      <td height="30">Kullanıcı Adı :</td>
+				        </tr>
+					    <tr>
+					      <td height="30"><label for="textfield"></label>
+				          <input name="username" type="text" class="text" id="username" /></td>
+				        </tr>
+					    <tr>
+					      <td height="30">Şifre:</td>
+				        </tr>
+					    <tr>
+					      <td height="30"><input name="password" type="password" class="text" id="password" /></td>
+				        </tr>
+					    <tr>
+					      <td height="30" align="center"><input type="submit" name="button" id="button" value="GİRİŞ" /></td>
+				        </tr>
+					    <tr>
+					      <td height="30"><a href="#">Şifremi Unuttum</a></td>
+				        </tr>
+				      </table></form>
+					</div>
+</div>
+	
+
+</body>
+</html>
