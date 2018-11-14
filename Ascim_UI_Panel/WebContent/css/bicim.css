@@ -1,0 +1,140 @@
+@CHARSET "UTF-8";
+body{ background-color:#e9e5f0; font-family:'Arial'; font-size:13px;}
+#ortala{ width:990px; margin-left:auto; margin-right:auto; overflow:auto;}
+	.banner{ width:990px; height:100px; background-image:url(img/banner.png); margin-bottom:30px; margin-top:30px;}
+	
+	#sol{float:left; width:230px; overflow:auto; background-color:#FFF; border:1px solid #737762; border-radius:5px 5px 0px 0px ; box-shadow: 0px 9px 10px #888888;}
+	#sag{float:right; width:510px; overflow:auto; background-color:#FFF; border:1px solid #737762; border-radius:5px 5px 0px 0px ;box-shadow: 0px 5px 10px #888888;}
+	.renk{ background-color:#4c6a6f; height:30px;}
+	.button{ color:#ffff; font-family:"Arial"; color:#fff; text-decoration:none; font-size:14px; padding:5px; line-height:30px; font-weight:800;}
+	#buttondiv{background-color:#49646e; border:1px solid #4a6368; border-radius:5px; text-align:left; margin-bottom:8px;}
+	#buttondiv:hover {background-color:#73949e; border:1px solid #4a6368; border-radius:5px; text-align:center; margin-bottom:8px;}
+	
+	h1{ font-size:20px;}
+	.text{ border:1px solid #dcdcdc; border-radius:5px; padding:9px; width:100%}
+
+.close {
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #00000F;
+  text-shadow: 0 1px 0 #FFF9E0;
+  opacity: 0.8;
+  filter: alpha(opacity=20);
+}
+.form-yer {
+	padding-top:50px;
+}
+.text-warning {
+  color: #c09853;
+}
+.text-error {
+  color: #b94a48;
+}
+.text-info {
+  color: #FF33CC;
+}
+.guzel {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+input:focus {
+	background-color : #FFFF99;
+}
+textarea:focus {
+	background-color : #FFFF99;
+}
+.btn {
+  display: inline-block;
+  *display: inline;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  *margin-left: .3em;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom-color: #b3b3b3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  *zoom: 1;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.command_bar {
+	position : absolute;
+	top : 0px;
+	right:10px;
+}
+.baslik {
+	color : #000066;
+}
+.sutun {
+	color : #333300;
+}
+.sil{
+	color : #FF0000;
+}
+.tablo {
+	float: left;
+	box-shadow: 2px 2px 1px #888888;
+	top: 0px;
+}
+
+.mavi {
+	background-color :  #0099FF;
+} 
+.yazı {
+	background-color : #0099FF;
+	font-size : 15px;
+}
+.form-yer {
+	padding-top:100px;
+}
+.kutu {
+	width: 675px;
+	height : 250px;
+	padding: 20px;
+	border-radius: 10px; /* Standart */
+	-moz-border-radius: 10px; /* Firefox */
+	-webkit-border-radius: 10px; /* Safari ve Chrome */
+	margin-bottom: 10px;
+	position: absolute;
+	left : 400px; 
+	top :  465px;
+	overflow: visible;
+	word-wrap: break-word;
+	background-color: #999;
+	white-space:pre
+	
+	}
+.sol {float:left; width:230px; overflow:auto; background-color:#FFF; border:1px solid #737762; border-radius:5px 5px 0px 0px ; box-shadow: 0px 9px 10px #888888;
+}
+.resim {
+	float: left;
+	width : 120px;
+	height: 68px;
+}

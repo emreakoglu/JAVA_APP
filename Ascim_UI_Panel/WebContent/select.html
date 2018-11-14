@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="contact">
+		search <input type="text" ng-model="search">
+		<br>
+		
+		<select id="select" ng-model="selected_person" ng-options="person as person.text for person in people | filter:search" ng-change="change(selected_person)">
+			<option value="">Choose a name</option>
+		</select>
+	</div>
+	<input type="button" onclick="bas()" value="Value Check">
+	<script>
+		angular.module('myApp',[]).controller('contact',function($scope)
+		{
+// 			$scope.people = [
+// 			     {name:"Emre Akoglu", number:287320},
+// 			     {name:"Tamer Vural", number:123123},
+// 			     {name:"Aykut Karakaya", number:231313}
+// 			];
+
+			$scope.people = [
+						     {value:"01.30.03&&&Dikim için sebze fidesi, meyve fidanı vb. yetiştirilmesi&&&Az Tehlikeli", text:"01.30.03 - Az Tehlikeli - Dikim için sebze fidesi, meyve fidanı vb. yetiştir"},
+						     {value:"01.30.04&&&Dikim için çiçek ve diğer bitkilerin yetiştirilmesi (dekoratif amaçlarla bitki ve çim yetiştirilmesi dahil, sebze fidesi, meyve fidanı hariç)&&&Az Tehlikeli", text:"01.30.04 - Az Tehlikeli - Dikim için çiçek ve diğer bitkilerin yetiştirilmes"},
+						     {value:"01.63.05&&&Tütünün sınıflandırılması, balyalanması vb. hizmetler&&&Az Tehlikeli", text:"01.63.05 - Az Tehlikeli - Tütünün sınıflandırılması, balyalanması vb. hizmet"}
+						];
+
+			$scope.change = function(selected_person) {
+				$('#select option:selected').val(selected_person.value);
+				
+			}
+			
+		});
+
+		function bas() {
+			alert($('#select option:selected').val());
+		}
+	</script>
+
+</body>
+</html>
+
