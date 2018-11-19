@@ -1,6 +1,9 @@
 package com.springbootjsf.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import com.springbootjsf.services.UserService;
 
 @Controller(value="pc_Login")
 public class LoginController {
@@ -11,6 +14,8 @@ public class LoginController {
 	
 	private String message = "asdasdas";
 	
+	@Autowired
+	private UserService userService;
 
 	public String getMessage() {
 		return message;
@@ -41,8 +46,11 @@ public class LoginController {
 	}
 	
 	public void doLogin() {
-		System.out.println(getKullaniciId());
-		System.out.println(getKullaniciSifre());
+		
+		boolean check = userService.checkUser(getKullaniciId(), getKullaniciSifre());
+		if (check) {
+			System.out.println("Login Basarili");
+		}
 	}
 
 }
