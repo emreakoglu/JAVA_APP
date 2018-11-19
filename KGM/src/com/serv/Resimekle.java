@@ -33,7 +33,6 @@ public class Resimekle extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-	
     public Resimekle() {
         super();
         // TODO Auto-generated constructor stub
