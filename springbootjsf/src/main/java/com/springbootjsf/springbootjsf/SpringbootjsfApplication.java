@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.sun.faces.config.ConfigureListener;
+
 
 @SpringBootApplication
 @ComponentScan({"com.springbootjsf"})
@@ -39,11 +39,8 @@ public class SpringbootjsfApplication {
 	public ServletContextInitializer servletContextInitializer() {
 		return servletContext -> {
 			servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
+			servletContext.setInitParameter("primefaces.THEME", "redmond");
 		};
 	}
-
-	@Bean
-	public ServletListenerRegistrationBean<ConfigureListener> jsfConfigureListener() {
-		return new ServletListenerRegistrationBean<ConfigureListener>(new ConfigureListener());
-	}
+//	
 }
