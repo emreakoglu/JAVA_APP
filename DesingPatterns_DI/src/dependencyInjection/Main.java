@@ -8,10 +8,10 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		BMV bmv = new BMV();
-		Mercebes mercebes = new Mercebes();
-		OpeI opeI = new OpeI();
-		HybridToyoto toyoto = new HybridToyoto();
+		A_Brand_Car a_brand_car = new A_Brand_Car();
+		B_Brand_Car b_brand_car = new B_Brand_Car();
+		C_Brand_Car c_brand_car = new C_Brand_Car();
+		Hybrid_Brand_Car hybrid_brand_car = new Hybrid_Brand_Car();
 		
 //		Main main = new Main();
 //		
@@ -21,8 +21,8 @@ public class Main {
 		
 		List<ICarService> carServices = new ArrayList<ICarService>();
 		
-		carServices.add(bmv);carServices.add(opeI);carServices.add(mercebes);
-		carServices.add(toyoto);
+		carServices.add(a_brand_car);carServices.add(c_brand_car);carServices.add(b_brand_car);
+		carServices.add(hybrid_brand_car);
 		
 		CarCreate carCreate = new CarCreate();
 		
