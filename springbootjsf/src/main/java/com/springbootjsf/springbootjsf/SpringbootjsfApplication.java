@@ -42,5 +42,5 @@ public class SpringbootjsfApplication {
 			servletContext.setInitParameter("primefaces.THEME", "redmond");
 		};
 	}
-//	
+	
 }

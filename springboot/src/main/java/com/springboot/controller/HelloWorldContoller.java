@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HelloWorldContoller {
 
-	@RequestMapping("/")
+	@RequestMapping()
 	public String welcome(Map<String, Object> model) {
 		model.put("message", "Hello World to Spring Boot Web Application");
 		return "helloworld";
