@@ -1,20 +1,24 @@
 package observerPattern;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ObserverPatternDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		Subject subject = new Subject(); // yeni bir duyuru geldi
-
-		new HexaObserver(subject); // bu yeni duyuru ile observerlar oluþturuldu
-		new OctalObserver(subject);
-		new BinaryObserver(subject);
-
-		System.out.println("First state change: 15");
-		subject.setState(15); // observarler tek tek uyarýldý
-		System.out.println("Second state change: 10");
-		subject.setState(10);
+		
+		MobilUygulama mobilUygulama = new MobilUygulama();
+		
+		WebSitesiUygulama sitesiUygulama = new WebSitesiUygulama();
+		
+		PushNotificationFromServer pushNotificationFromServer = new PushNotificationFromServer();
+		
+		List<Observer> observerList = new ArrayList<Observer>();
+		observerList.add(mobilUygulama);
+		observerList.add(sitesiUygulama);
+		
+		pushNotificationFromServer.triggerObserverForNotify(observerList);
 
 	}
 
