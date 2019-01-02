@@ -17,19 +17,19 @@ public class Put_Get {
 	
 	public static void main(String args[]) {
 		int openOptions = CMQC.MQOO_INQUIRE | CMQC.MQOO_INPUT_AS_Q_DEF | MQConstants.MQOO_OUTPUT;
-		MQEnvironment.hostname = "localhost";
-		MQEnvironment.port = 1414;
-		MQEnvironment.channel = "DP.CHANNEL";
-		MQEnvironment.properties.put(CMQC.USER_ID_PROPERTY, "MUSR_MQADMIN");
-		MQEnvironment.properties.put(CMQC.PASSWORD_PROPERTY, "Passw0rd");
+		MQEnvironment.hostname = "localhost"; // MQ Server Host or IP
+		MQEnvironment.port = 1414;			  // MQ Listener Port
+		MQEnvironment.channel = "DP.CHANNEL";	// MQ Channel 
+		MQEnvironment.properties.put(CMQC.USER_ID_PROPERTY, "MUSR_MQADMIN"); // mq User for linux mqm
+		MQEnvironment.properties.put(CMQC.PASSWORD_PROPERTY, "*****");		// mqm user Password
 		MQEnvironment.properties.put(CMQC.TRANSPORT_PROPERTY, CMQC.TRANSPORT_MQSERIES);
 		
 		MQQueueManager qmanager;
 		try {
-			qmanager = new MQQueueManager("LOCAL_QM");
-			MQQueue DPLOG = qmanager.accessQueue("DPLOG", openOptions);
+			qmanager = new MQQueueManager("LOCAL_QM"); // Queue Manager name
+			MQQueue DPLOG = qmanager.accessQueue("DPLOG", openOptions); // Queue Name
 			MQMessage putMessage = new MQMessage();
-			putMessage.writeUTF("Merhaba Dunya MQ Put Testing");
+			putMessage.writeUTF("Merhaba Dunya MQ Put Testing"); // Put message content
 			MQPutMessageOptions pmo = new MQPutMessageOptions();
 			DPLOG.put(putMessage);
 			
