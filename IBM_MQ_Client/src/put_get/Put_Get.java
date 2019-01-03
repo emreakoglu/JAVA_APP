@@ -100,10 +100,9 @@ public class Put_Get {
 				// file içeriðini al
 				BufferedReader reader = new BufferedReader(new FileReader((File)object));
 				StringBuilder stringBuilder = new StringBuilder();
-				char[] buffer = new char[10];
-				while (reader.read(buffer) != -1) {
-					stringBuilder.append(new String(buffer));
-					buffer = new char[10];
+				String temp_String;
+				while ((temp_String = reader.readLine()) != null) {
+					stringBuilder.append(new String(temp_String));
 				}
 				reader.close();
 
