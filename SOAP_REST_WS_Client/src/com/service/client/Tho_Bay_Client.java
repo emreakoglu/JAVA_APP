@@ -25,6 +25,7 @@ public class Tho_Bay_Client {
 	public static void main(String[] args) throws AxisFault, MalformedURLException, ServiceException{
 		
 		BLZServiceLocator blzServiceLocator = new BLZServiceLocator();
+		
 		java.net.URL url = new URL(blzServiceLocator.getBLZServiceSOAP11port_httpAddress());
 		
 		BLZServiceSOAP11BindingStub bindingStub = new BLZServiceSOAP11BindingStub(url, blzServiceLocator);
