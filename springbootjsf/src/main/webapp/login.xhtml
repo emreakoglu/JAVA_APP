@@ -20,14 +20,9 @@
 			height="200" id="pnlGiris" visible="true" closable="false"
 			resizable="false">
 
-			<h:outputLabel value="#{pc_Login.message}" />
-			<h:commandButton value="Hello World!"
-				actionListener="#{pc_Login.clickHelloWorldButton}" />
-
 			<f:facet name="footer">
 				<center>
-					<p:commandButton value="Giriş" action="#{pc_Login.doLogin}"></p:commandButton>
-					<p:calendar value="#{pc_Login.date}" locale="tr" navigator="true"></p:calendar>
+					<p:commandButton value="Giriş" actionListener="#{pc_Login.doLogin}"></p:commandButton>
 				</center>
 			</f:facet>
 			<center>

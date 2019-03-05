@@ -1,5 +1,7 @@
 package com.springbootjsf.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
@@ -25,6 +27,14 @@ public class UserService {
 
 		return null;
 
+	}
+	
+	public List<String> findAllPassword() {
+		return userRepository.findAllPassword();
+	}
+	
+	public User findByPassword(String password) {
+		return userRepository.findByPassword(password);
 	}
 
 }

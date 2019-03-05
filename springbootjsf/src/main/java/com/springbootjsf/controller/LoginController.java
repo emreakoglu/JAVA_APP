@@ -1,10 +1,13 @@
 package com.springbootjsf.controller;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,25 +19,25 @@ import com.springbootjsf.model.User;
 import com.springbootjsf.services.UserService;
 import com.springbootjsf.session.SessionUtils;
 
-@Controller(value="pc_Login")
-public class LoginController extends PageCodeBase{
-	
+@Controller(value = "pc_Login")
+public class LoginController extends PageCodeBase {
+
 	private String kullaniciId;
-	
+
 	private String kullaniciSifre;
-	
+
 	private String message = "asdasdas";
-	
+
 	private Date date;
-	
+
 	public Date getDate() {
 		return date;
 	}
-	
+
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
+
 	@Autowired
 	private UserService userService;
 
@@ -61,27 +64,45 @@ public class LoginController extends PageCodeBase{
 	public void setKullaniciSifre(String kullaniciSifre) {
 		this.kullaniciSifre = kullaniciSifre;
 	}
-	
+
 	public void clickHelloWorldButton() {
 		System.out.println("Merhaba Dunya Tıklandı");
 	}
-	
+
 	public String doLogin() {
 		
-		User user = userService.checkUser(getKullaniciId(), getKullaniciSifre());
-		if (user !=null) {
+		User user = hashPassword(getKullaniciSifre(),getKullaniciId());
+		if (user != null) {
 			System.out.println("Login Basarili");
-			SessionBean sessionBean  = new SessionBean();
+			SessionBean sessionBean = new SessionBean();
 			sessionBean.setUser(user);
 			HttpSession httpSession = SessionUtils.getSession();
 			httpSession.setAttribute("sessionBean", sessionBean);
-			
+
 			return "/mainpage.xhtml" + "?faces-redirect=true";
-		}else{
+		} else {
 			System.out.println("Login Basarisiz");
 		}
-		
+
 		return "";
+	}
+	
+	private User hashPassword(String plainTextPassword,String username){
+		
+		List<String> allPwd = userService.findAllPassword();
+		
+		User user = null;
+		
+		boolean chechPwd = false;
+		
+		for (String string : allPwd) {
+			chechPwd = BCrypt.checkpw(plainTextPassword, string);
+			if (chechPwd) {
+				user = userService.checkUser(username, string);
+				return user;
+			}
+		}
+		return user;
 	}
 
 }
