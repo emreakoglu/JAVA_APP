@@ -26,5 +26,10 @@ public abstract class PageCodeBase {
 		this.sessionBean = sessionBean;
 	}
 	
+	public FacesContext getFacesContext() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		return context;
+	}
+	
 
 }

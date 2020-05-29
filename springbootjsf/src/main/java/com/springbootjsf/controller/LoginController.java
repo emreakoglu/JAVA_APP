@@ -4,9 +4,13 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.ManagedBean;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.SessionScoped;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +23,8 @@ import com.springbootjsf.model.User;
 import com.springbootjsf.services.UserService;
 import com.springbootjsf.session.SessionUtils;
 
-@Controller(value = "pc_Login")
+@ManagedBean(value = "pc_Login")
+@Scope("session")
 public class LoginController extends PageCodeBase {
 
 	private String kullaniciId;
@@ -79,9 +84,11 @@ public class LoginController extends PageCodeBase {
 			HttpSession httpSession = SessionUtils.getSession();
 			httpSession.setAttribute("sessionBean", sessionBean);
 
-			return "/mainpage.xhtml" + "?faces-redirect=true";
+			return "mainpage" + "?faces-redirect=true";
 		} else {
+			
 			System.out.println("Login Basarisiz");
+			getFacesContext().addMessage(null, new FacesMessage("Login", "Login Başarısız"));
 		}
 
 		return "";

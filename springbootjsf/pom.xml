@@ -7,7 +7,7 @@
 	<groupId>com.springbootjsf</groupId>
 	<artifactId>springbootjsf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>springbootjsf</name>
 	<description>Demo project for Spring Boot</description>
@@ -111,6 +111,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
 					<mainClass>com.springbootjsf.springbootjsf.SpringbootjsfApplication</mainClass>
 				</configuration>
 			</plugin>

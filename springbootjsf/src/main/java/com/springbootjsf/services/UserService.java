@@ -36,5 +36,11 @@ public class UserService {
 	public User findByPassword(String password) {
 		return userRepository.findByPassword(password);
 	}
+	
+	public User addUser(User user) {
+		userRepository.save(user);
+		userRepository.flush();
+		return user;
+	}
 
 }
