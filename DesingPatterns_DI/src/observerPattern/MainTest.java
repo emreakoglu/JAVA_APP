@@ -3,7 +3,7 @@ package observerPattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ObserverPatternDemo {
+public class MainTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -12,12 +12,11 @@ public class ObserverPatternDemo {
 		
 		WebSitesiUygulama sitesiUygulama = new WebSitesiUygulama();
 		
-		PushNotificationFromServer pushNotificationFromServer = new PushNotificationFromServer();
-		
 		List<Observer> observerList = new ArrayList<Observer>();
 		observerList.add(mobilUygulama);
 		observerList.add(sitesiUygulama);
 		
+		PushNotificationFromServer pushNotificationFromServer = new PushNotificationFromServer();
 		pushNotificationFromServer.triggerObserverForNotify(observerList);
 
 	}
