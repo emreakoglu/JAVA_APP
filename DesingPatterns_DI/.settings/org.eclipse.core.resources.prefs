@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/decoratorPattern/DecoratorA.java=UTF-8
+encoding//src/factoryPattern/Asus.java=UTF-8
+encoding//src/factoryPattern/Mac.java=UTF-8
 encoding//src/proxyPattern/RealPerson.java=UTF-8
