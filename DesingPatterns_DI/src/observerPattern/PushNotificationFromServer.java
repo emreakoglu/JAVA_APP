@@ -2,10 +2,6 @@ package observerPattern;
 
 import java.util.List;
 
-import javax.xml.ws.handler.MessageContext;
-
-import java.util.ArrayList;
-
 public class PushNotificationFromServer {
 	
 	String message = "Notification";
